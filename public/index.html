@@ -1,1 +1,110 @@
-Hello world
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>BurgerHeaven Online</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <header>
+        <h1>Välkommen till BurgerOnline</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Select Burger</h2>
+            <div>
+                <p>
+                    This is where you execute burger selection
+                </p>
+            </div>
+
+
+            <div style="display: inline-block;">
+                <h3>BBQ burger</h3>
+                <img src="img/BBQ burger.jpg" style="width: 200px;">
+                <ul>
+                    <li>Beef, tomato, lettuce, BBQ-sause</li>
+                    <li>Contains gluten</li>
+                </ul>
+            </div>
+
+            <div style="display: inline-block;">
+                <h3>Veggie</h3>
+                <img src="img/Veggie burger.jpg" style="width: 200px;">
+                <ul>
+                    <li>Quorn, tomato, lettuce, 3x cheese</li>
+                    <li>Contains gluten and lactose</li>
+                </ul>
+            </div>
+
+            <div style="display: inline-block;">
+                <h3>Spicy onion Burger</h3>
+                <img src="img/Onion and jalapeno burger.jpg" style="width: 200px;">
+                <ul>
+                    <li>Beef, tomato, Onion, cheese, jalapeno</li>
+                    <li>Contains gluten and lactose</li>
+                </ul>
+            </div>
+
+        </section>
+        <section>
+            <h2>Customer information</h2>
+            <div>
+                <h3>Delivery information</h3>
+                <p>
+                    <label for="firstname">Full name</label><br>
+                    <input type="text" id="firstname" name="fn" required="required" placeholder="First- and Last name">
+                </p>
+                <p>
+                    <label for="email">E-mail</label><br>
+                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                </p>
+                <p>
+                    <label for="street">Street</label><br>
+                    <input type="street" id="street" name="sn" required="required" placeholder="Street name">
+                </p>
+                <p>
+                    <label for="house">House</label><br>
+                    <input type="number" id="house" name="hn" required="required" placeholder="House number" min="1">
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>Payment options</h3>
+            <p>
+                <label for="recipient">Recipient</label><be>
+                <select id="recipient" name="rcp">
+                    <option>Credit card</option>
+                    <option>Swish</option>
+                    <option>Klarna</option>
+                    <option>Paypal</option>
+                </select>
+            </p>
+            <h3>Gender</h3>
+            <p>
+                <div>
+                    <input type="radio" id="female" name="drone" value="female" checked />
+                    <label for="female">Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="male" name="drone" value="male" checked />
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="do not wish to provide" name="drone" value="do not wish to provide" checked />
+                    <label for="do not wish to provide">Do not wish to provide</label>
+                </div>
+            </p>
+            <p>
+                <button type="submit">
+                    <img src="img/Deliveryimage.png" style="width: 50px;">
+                    Place order
+                </button>
+            </p>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        End notes
+    </footer>
+</body>
+</html>
