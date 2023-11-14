@@ -1,0 +1,52 @@
+body {
+   font-family: arial;
+}
+
+.allergen {
+   font-weight: bold;
+}
+
+.burgers {
+    border: 5px dotted #ff9900;
+    background-color: black;
+    color: white;
+}
+
+.customerinfo {
+    border: 5px dotted #ff9900;
+}
+
+.space {
+    margin: 10px;
+}
+
+.burgerspace{
+    padding: 60px;
+}
+
+.ubspace {
+    padding: 10px;
+}
+
+button:hover {
+   background-color: blue;
+   cursor: grab;
+}
+
+.headline {
+    background-image;
+    text-align: center;
+    overflow:hidden;
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.wrapper {
+     display: grid;
+     grid-gap: 10px;
+     grid-template-columns: 33% 33% 33%;
+}
