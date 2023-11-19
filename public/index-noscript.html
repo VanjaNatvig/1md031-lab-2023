@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>BurgerHeaven Online</title>
+    <meta charset="utf-8"/>
+   <!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header class="headline">
+        <h1 style="position:absolute; padding: 350px;">Välkommen till BurgerOnline</h1>
+        <img src="img/Headline.jpg" style="opacity:0.5;  position:relative;">
+    </header>
+    <main>
+        <section class="space burgers">
+            <h2>Select Burger</h2>
+            <div>
+                <p>
+                    This is where you execute burger selection
+                </p>
+            </div>
+
+<div class="wrapper">
+            <div class="burgerspace" style="display: inline-block;">
+                <h3>BBQ burger</h3>
+                <img src="img/BBQ burger.jpg" style="width: 200px; height: 200px">
+                <ul>
+                    <li>Beef, tomato, lettuce, BBQ-sause</li>
+                    <li><span class="allergen">Contains gluten</span></li>
+                </ul>
+            </div>
+
+            <div class="burgerspace" style="display: inline-block;">
+                <h3>Veggie</h3>
+                <img src="img/Veggie burger.jpg" style="width: 200px; height: 200px">
+                <ul>
+                    <li>Quorn, tomato, lettuce, 3x cheese</li>
+                    <li><span class="allergen">Contains gluten and lactose</span></li>
+                </ul>
+            </div>
+
+            <div class="burgerspace" style="display: inline-block;">
+                <h3>Spicy onion Burger</h3>
+                <img src="img/Onion and jalapeno burger.jpg" style="width: 200px;   height: 200px;">
+                <ul>
+                    <li>Beef, tomato, Onion, cheese, jalapeno</li>
+                    <li><span class="allergen">Contains gluten and lactose</span></li>
+                </ul>
+            </div>
+</div>
+        </section>
+        <section class="space customerinfo">
+            <h2>Customer information</h2>
+            <div>
+                <h3>Delivery information</h3>
+                <p>
+                    <label for="firstname">Full name</label><br>
+                    <input type="text" id="firstname" name="fn" required="required" placeholder="First- and Last name">
+                </p>
+                <p>
+                    <label for="email">E-mail</label><br>
+                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                </p>
+                <p>
+                    <label for="street">Street</label><br>
+                    <input type="text" id="street" name="sn" required="required" placeholder="Street name">
+                </p>
+                <p>
+                    <label for="house">House</label><br>
+                    <input type="number" id="house" name="hn" required="required" placeholder="House number" min="1">
+                </p>
+            </div>
+            <h3>Payment options</h3>
+            <p>
+                <label for="recipient">Recipient</label>
+                <select id="recipient" name="rcp">
+                    <option>Credit card</option>
+                    <option>Swish</option>
+                    <option>Klarna</option>
+                    <option>Paypal</option>
+                </select>
+            </p>
+            <h3>Gender</h3>
+            <div>
+                <input type="radio" id="female" name="drone" value="female" checked />
+                <label for="female">Female</label>
+            </div>
+            <div>
+                <input type="radio" id="male" name="drone" value="male" checked />
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="do not wish to provide" name="drone" value="do not wish to provide" checked />
+                <label for="do not wish to provide">Do not wish to provide</label>
+            </div>
+        </section>
+            <p>
+                <button class="ubspace" type="submit">
+                    <img src="img/Deliveryimage.png" style="width: 50px;">
+                    Place order
+                </button>
+            </p>
+
+    </main>
+    <hr>
+    <footer>
+        End notes
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "All in one burger",
+    "kCal": 250,
+    "lactoseFree": false,
+    "glutenFree": false,
+    "url": "img/The crazy burger.jpg",
+    "ingredients": "Beef, tomato, Onion, cheese, jalapeno"
+  },
+  {
+    "name": "The lava burger",
+    "kCal": 450,
+    "lactoseFree": true,
+    "glutenFree": true,
+    "url": "img/The lava burger.jpg",
+    "ingredients": "Quorn, tomato, lettuce, 3x cheese"
+  },
+  {
+    "name": "The pink burger",
+    "kCal": 850,
+    "lactoseFree": false,
+    "glutenFree": true,
+    "url": "img/The pink burger.jpg",
+    "ingredients": "Beef, tomato, lettuce, BBQ-sause"
+  }
+
+]
