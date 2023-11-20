@@ -13,17 +13,13 @@
                 </ul>
 
 
-<div class="container">
-  <div id="increment-count">
-    <input type="image" id="up-arrow" src="img/up-arrow.jpg" v-on:click="inc"/>
-  </div>
-  <div id="total-count">
-                {{amountOrdered}}
-  </div>
-  <div id="decrement-count">
-    <input type="image" id="down-arrow" src="img/down-arrow.jpg" v-on:click="dec"/>
-  </div>
-</div>
+<form>
+  <div class="value-button" id="decrease" v-on:click="decreaseValue()" value="Decrease Value">-</div>
+  <span id="number">
+                  {{amountOrdered}}
+  </span>
+  <div class="value-button" id="increase" v-on:click="increaseValue()" value="Increase Value">+</div>
+</form>
             </div>
 
   </template>
@@ -40,19 +36,21 @@
         }
     },
       methods: {
-        inc: function () {
+increaseValue: function () {
           this.amountOrdered +=1;
             this.$emit('orderedBurger', { name:   this.burger.name,
                                           amount: this.amountOrdered
                                         }
                                         );
-        },
-        dec: function () {
-          this.amountOrdered -=1;
-            this.$emit('orderedBurger', { name:   this.burger.name,
-                                          amount: this.amountOrdered
-                                        }
-                                        );
+},
+
+decreaseValue: function () {
+    if (this.amountOrdered > 0)
+            this.amountOrdered -=1;
+              this.$emit('orderedBurger', { name:   this.burger.name,
+                                            amount: this.amountOrdered
+                                          }
+                                          );
         }
       }
   }
@@ -67,9 +65,10 @@
   }
 
 .burger img {
-   height: 320px;
-   width: 320px;
-   padding: 20px
+   padding: 20px;
+   height: auto;
+   max-width: 100%;
+
 }
 .arrows img {
     height: 10px;
@@ -79,5 +78,64 @@
   .space {
       margin: 10px;
   }
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+span#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
   </style>
-  

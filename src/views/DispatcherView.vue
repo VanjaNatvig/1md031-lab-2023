@@ -4,10 +4,11 @@
         <div v-for="(order, key) in orders" v-bind:key="'order'+key">
 <div v-bind:style="{ left: order.details.x + 'px',
                       top: order.details.y + 'px' }">
-    T
+    <p>#{{ key }}: {{ order.orderItems }} <br>
+    <em>({{ order.details.fn}}, {{ order.details.em }}, {{ order.details.rcp}}, {{ order.details.drone }})</em>
+    </p>
 </div>
 
-          // T: {{ order.orderItems.join(", ") }}
         </div>
         <button v-on:click="clearQueue">Clear Queue</button>
       </div>
@@ -49,6 +50,7 @@
     color:black;
     background: rgba(255,255,255, 0.5);
     padding: 1em;
+    font-family: times;
   }
   #dots {
     position: relative;

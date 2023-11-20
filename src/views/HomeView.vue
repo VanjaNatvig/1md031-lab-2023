@@ -1,12 +1,12 @@
 <template>
-    <header class="headline">
+<!--    <header class="headline">
         <h1 style="position:absolute; left: 250px; margin: 200px;">Welcome to BurgerHeaven</h1>
         <img src="img/background.jpg" style="opacity:0.5;  position:relative;">
-    </header>
+    </header>   -->
     <main>
         <section class="space burgers">
             <h1 style="margin: 10px;">Select Burger</h1>
-     <div>
+     <div class="wrapper">
      <Burger v-for="burger in burgers"
               v-bind:burger="burger"
               v-bind:key="burger.name"
@@ -15,8 +15,9 @@
 
         </section>
         <section class="space customerinfo">
+          <div class="space">
             <h2>Customer information</h2>
-            <div>
+
                 <h3>Delivery information</h3>
                 <p>
                     <label for="firstname">Full name</label><br>
@@ -26,7 +27,6 @@
                     <label for="email">E-mail</label><br>
                     <input type="email" id="email" v-model="em" required="required" placeholder="E-mail address">
                 </p>
-            </div>
             <h3>Payment options</h3>
             <p>
                 <label for="recipient">Recipient</label>
@@ -38,15 +38,16 @@
                 </select>
             </p>
             <h3>Gender</h3>
-            <div>
+            </div>
+            <div class="space">
                 <input type="radio" id="female" v-model="drone" value="female" />
                 <label for="female">Female</label>
             </div>
-            <div>
+            <div class="space">
                 <input type="radio" id="male" v-model="drone" value="male" />
                 <label for="male">Male</label>
             </div>
-            <div>
+            <div class="space">
                 <input type="radio" id="do not wish to provide" v-model="drone" value="do not wish to provide" />
                 <label for="do not wish to provide">Do not wish to provide</label>
             </div>
@@ -61,11 +62,13 @@
     </main>
     <hr>
     <footer>
-        End notes
+        Indicate point of delivery by clicking on the map
     </footer>
   <div id="wrappermap">
     <div id="map" v-on:click="setLocation">
-      click here
+              <div id="dot" v-bind:style="{ left: this.location.x + 'px', top: this.location.y + 'px'}" v-bind:key="'dots' + key">
+                T
+              </div>
     </div>
   </div>
 </template>
@@ -78,14 +81,6 @@ import burgerList from '../assets/menu.json'
 
 const socket = io();
 
-/* function MenuItem(fn, url, kCal, glutenFree, lactoseFree, ingredients) {
-    this.productName = fn;
-    this.url = url;
-    this.kCal = kCal;
-    this.glutenFree = glutenFree;
-    this.lactoseFree = lactoseFree;
-    this.ingredients = ingredients
-}*/
 
 export default {
   name: 'HomeView',
@@ -99,22 +94,24 @@ export default {
       orderedBurgers: {},
       location: { x: 0,
                   y: 0
-                }
+                },
+      orderNr: 0
     }
   },
   methods: {
     getOrderNumber: function () {
-      return Math.floor(Math.random()*100000);
+//      return Math.floor(Math.random()*100000);
+      return this.orderNr +=1;
     },
     addOrder: function (event) {
-      var offset = {x: event.currentTarget.getBoundingClientRect().left,
-                    y: event.currentTarget.getBoundingClientRect().top};
-      location.x=offset.x;
-      location.y=offset.y;
       socket.emit("addOrder", { orderId: this.getOrderNumber(),
-                                details: { x: event.clientX - 10 - offset.x,
-                                           y: event.clientY - 10 - offset.y },
-                                orderItems: [this.fn, this.em, this.rcp, this.drone, this.orderedBurgers]
+                                details: { x: this.location.x,
+                                           y: this.location.y,
+                                           fn: this.fn,
+                                           em: this.em,
+                                           rcp: this.rcp,
+                                           drone: this.drone},
+                                orderItems: [this.orderedBurgers]
                               }
                  );
     },
@@ -125,7 +122,8 @@ export default {
       this.orderedBurgers[event.name] = event.amount;
     },
     setLocation: function(event){
-
+      this.location = {x: event.clientX - 10 - event.currentTarget.getBoundingClientRect().left,
+                    y: event.clientY - 10 - event.currentTarget.getBoundingClientRect().top};
     }
   }
 }
@@ -151,7 +149,7 @@ body {
 }
 
 .space {
-    margin: 2px;
+    margin: 5px;
 }
 
 .burgerspace{
@@ -162,7 +160,7 @@ body {
     padding: 10px;
 }
 
-button:hover {
+.ubspace:hover {
    background-color: blue;
    cursor: grab;
 }
@@ -170,8 +168,8 @@ button:hover {
 .headline {
     text-align: center;
     overflow:hidden;
-    height: 400px
-
+    height: 400px;
+    background-image: url("../../public/img/background.jpg");
 }
 
 img {
@@ -188,10 +186,23 @@ img {
     width: 1920px;
     height: 1078px;
     background-image: url("../../public/img/polacks.jpg");
+    position:relative;
+        cursor: crosshair;
   }
   #wrappermap {
     overflow: scroll;
     width: 800px;
     height: 400px;
+  }
+
+  #dot {
+        position: absolute;
+        background: red;
+        color: white;
+        border-radius: 10px;
+        width:20px;
+        height:20px;
+        text-align: center;
+
   }
 </style>

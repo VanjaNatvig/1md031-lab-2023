@@ -4,7 +4,7 @@
     "kCal": 250,
     "lactoseFree": false,
     "glutenFree": false,
-    "url": "img/The crazy burger.jpg",
+    "url": "img/burg1.png",
     "ingredients": "Beef, tomato, Onion, cheese, jalapeno"
   },
   {
@@ -12,7 +12,7 @@
     "kCal": 450,
     "lactoseFree": true,
     "glutenFree": true,
-    "url": "img/The lava burger.jpg",
+    "url": "img/burg2.png",
     "ingredients": "Quorn, tomato, lettuce, 3x cheese"
   },
   {
@@ -20,7 +20,7 @@
     "kCal": 850,
     "lactoseFree": false,
     "glutenFree": true,
-    "url": "img/The pink burger.jpg",
+    "url": "img/burg3.png",
     "ingredients": "Beef, tomato, lettuce, BBQ-sause"
   }
 
