@@ -1,8 +1,7 @@
 <template>
-<!--    <header class="headline">
-        <h1 style="position:absolute; left: 250px; margin: 200px;">Welcome to BurgerHeaven</h1>
-        <img src="img/background.jpg" style="opacity:0.5;  position:relative;">
-    </header>   -->
+    <header class="headline space">
+        <h1 id="topheader">Welcome to BurgerHeaven</h1>
+    </header>
     <main>
         <section class="space burgers">
             <h1 style="margin: 10px;">Select Burger</h1>
@@ -134,6 +133,10 @@ body {
    font-family: papyrus;
 }
 
+#topheader {
+    text-align: center;
+    padding: 70px 0;
+}
 .allergen {
    font-weight: bold;
 }
@@ -152,9 +155,6 @@ body {
     margin: 5px;
 }
 
-.burgerspace{
-    padding: 60px;
-}
 
 .ubspace {
     padding: 10px;
@@ -168,8 +168,12 @@ body {
 .headline {
     text-align: center;
     overflow:hidden;
-    height: 400px;
+    height: 200px;
     background-image: url("../../public/img/background.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    position: relative;
+    background-size: 100% 100%;
 }
 
 img {
@@ -187,7 +191,7 @@ img {
     height: 1078px;
     background-image: url("../../public/img/polacks.jpg");
     position:relative;
-        cursor: crosshair;
+    cursor: crosshair;
   }
   #wrappermap {
     overflow: scroll;
@@ -196,13 +200,12 @@ img {
   }
 
   #dot {
-        position: absolute;
-        background: red;
-        color: white;
-        border-radius: 10px;
-        width:20px;
-        height:20px;
-        text-align: center;
-
+    position: absolute;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    width:20px;
+    height:20px;
+    text-align: center;
   }
 </style>

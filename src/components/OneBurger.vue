@@ -70,9 +70,10 @@ decreaseValue: function () {
    max-width: 100%;
 
 }
-.arrows img {
-    height: 10px;
-    width: 10px;
+
+.burger h3 {
+    text-align: center;
+
 }
 
   .space {
@@ -80,7 +81,6 @@ decreaseValue: function () {
   }
 
 form {
-  width: 300px;
   margin: 0 auto;
   text-align: center;
   padding-top: 50px;
@@ -95,7 +95,7 @@ form {
   text-align: center;
   vertical-align: middle;
   padding: 11px 0;
-  background: #eee;
+  background: #999;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -128,9 +128,13 @@ span#number {
   border: none;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  margin: 20px;
+  margin: 0px;
   width: 40px;
   height: 40px;
+  padding-bottom: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
